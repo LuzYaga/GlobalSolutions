@@ -2,9 +2,6 @@
 
 > **"Seu satélite virtual para proteger pequenas propriedades rurais"**
 
-**Global Solutions 2025 - FIAP**
-**Engenharia de Software - 3º Semestre - EAD**
-
 ---
 
 ## 1. Descrição Geral do Projeto

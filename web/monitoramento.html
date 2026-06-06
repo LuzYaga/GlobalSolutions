@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSat AI - Monitoramento Satelital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div>
+                    <div class="logo-text">AgroSat AI</div>
+                    <div class="logo-slogan">Satélite Virtual</div>
+                </div>
+            </div>
+
+            <nav>
+                <ul class="sidebar-menu">
+                    <li class="menu-item">
+                        <a href="dashboard.html">
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="monitoramento.html">
+                            <span class="menu-text">Monitoramento</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="climatica.html">
+                            <span class="menu-text">Central Climática</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="recomendacoes.html">
+                            <span class="menu-text">Recomendações IA</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" style="margin-top: auto;">
+                        <a href="index.html" style="color: var(--accent-red);">
+                            <span class="menu-text">Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1 class="animate-fade">Monitoramento Satelital</h1>
+                    <p class="animate-fade">Imagens espectrais e índice de vegetação ativo</p>
+                </div>
+
+                <div class="animate-fade">
+                    <select id="farmSelect" class="farm-selector">
+                        <!-- Preenchido dinamicamente via JS -->
+                    </select>
+                </div>
+            </header>
+
+            <!-- Layout do Mapa e Detalhes -->
+            <div class="map-layout">
+                <!-- Painel do Mapa -->
+                <section class="glass-card map-container animate-fade">
+                    <h2 id="mapTitle" style="margin-bottom: 0.5rem;">Vetorização de Índices</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 2rem;">Zonas térmicas obtidas em órbita heliossíncrona simulada</p>
+                    
+                    <!-- Mapa em Grid CSS -->
+                    <div class="map-grid" id="mapGrid">
+                        <!-- Gerado dinamicamente via JS -->
+                    </div>
+
+                    <!-- Legenda do Mapa -->
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-color zone-healthy"></div>
+                            <span>Saudável (NDVI > 0.6)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color zone-attention"></div>
+                            <span>Atenção (NDVI 0.3 - 0.6)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color zone-risk"></div>
+                            <span>Risco Elevado (NDVI < 0.3)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detalhes da Propriedade Selecionada -->
+                <section class="glass-card details-panel animate-fade" style="animation-delay: 0.1s;">
+                    <h2>Indicadores de Campo</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">Processamento automatizado</p>
+                    
+                    <div class="detail-row">
+                        <span>Localização</span>
+                        <span id="detailLoc">-</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Área Total Monitorada</span>
+                        <span id="detailArea">-</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Culturas Ativas</span>
+                        <span id="detailCrops">-</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Índice NDVI Médio</span>
+                        <span id="detailNdvi" style="color: var(--accent-green);">-</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Umidade Média do Solo</span>
+                        <span id="detailMoisture" style="color: var(--accent-blue);">-</span>
+                    </div>
+
+                    <div class="detail-row">
+                        <span>Status Geral</span>
+                        <span id="detailStatus">-</span>
+                    </div>
+
+                    <div style="margin-top: 1.5rem; text-align: center;">
+                        <a href="recomendacoes.html" class="btn-primary" style="display: block; text-decoration: none; text-align: center;">Ver Recomendações da IA</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/dados.js"></script>
+    <script src="js/monitoramento.js"></script>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
 > **"Seu satélite virtual para proteger pequenas propriedades rurais"**
 
+Site acessível por: https://luzyaga.github.io/GlobalSolutions/
 ---
 
 ## 1. Descrição Geral do Projeto

@@ -43,9 +43,6 @@ h1, h2, h3, .logo-text { font-family: 'Outfit', sans-serif; }
 /* ── LAYOUT ─────────────────────────────────────────────── */
 .app-container { display: flex; min-height: 100vh; }
 
-/* Hambúrguer oculto em desktop — só aparece no mobile via @media */
-.hamburger { display: none; }
-
 /* ── SIDEBAR ─────────────────────────────────────────────── */
 .sidebar {
     width: var(--sidebar-width);
@@ -59,8 +56,7 @@ h1, h2, h3, .logo-text { font-family: 'Outfit', sans-serif; }
     z-index: 200;
     backdrop-filter: blur(12px);
     transition: var(--transition);
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .sidebar-logo {
@@ -413,7 +409,6 @@ h1, h2, h3, .logo-text { font-family: 'Outfit', sans-serif; }
         flex-direction: column;
         gap: 5px;
         padding: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
     .hamburger span {
@@ -423,11 +418,6 @@ h1, h2, h3, .logo-text { font-family: 'Outfit', sans-serif; }
         border-radius: 2px;
         transition: var(--transition);
     }
-
-    /* Animação X quando aberto */
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* Overlay escuro quando sidebar aberta */
     .sidebar-overlay {

@@ -8,6 +8,25 @@
 </head>
 <body>
 
+    
+    <!-- Hambúrguer + Overlay (mobile) -->
+    <button class="hamburger" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <script>
+        (function(){
+            var btn = document.getElementById('menuToggle');
+            var sidebar = document.querySelector('.sidebar');
+            var overlay = document.getElementById('sidebarOverlay');
+            function openMenu(){ sidebar.classList.add('open'); overlay.classList.add('active'); btn.classList.add('open'); }
+            function closeMenu(){ sidebar.classList.remove('open'); overlay.classList.remove('active'); btn.classList.remove('open'); }
+            btn.addEventListener('click', function(){ sidebar.classList.contains('open') ? closeMenu() : openMenu(); });
+            overlay.addEventListener('click', closeMenu);
+            sidebar.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+        })();
+    </script>
+
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
@@ -22,26 +41,31 @@
                 <ul class="sidebar-menu">
                     <li class="menu-item">
                         <a href="dashboard.html">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
                             <span class="menu-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="menu-item active">
                         <a href="monitoramento.html">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/></svg>
                             <span class="menu-text">Monitoramento</span>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="climatica.html">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
                             <span class="menu-text">Central Climática</span>
                         </a>
                     </li>
                     <li class="menu-item">
                         <a href="recomendacoes.html">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="m9 12 2 2 4-4"/></svg>
                             <span class="menu-text">Recomendações IA</span>
                         </a>
                     </li>
                     <li class="menu-item" style="margin-top: auto;">
                         <a href="index.html" style="color: var(--accent-red);">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
                             <span class="menu-text">Sair</span>
                         </a>
                     </li>
